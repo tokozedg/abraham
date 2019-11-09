@@ -56,6 +56,8 @@
 
   // Don't start the tour if the user dismissed it once this session
   if (!Cookies.get('<%= abraham_cookie_prefix %>-<%= tour_name %>', { domain: '<%= abraham_domain %>' })) {
-    tour.start();
+    if (window.screen.width > 1147) {
+      tour.start();
+    }
   }
 </script>
